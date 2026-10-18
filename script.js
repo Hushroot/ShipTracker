@@ -32,6 +32,7 @@ form.addEventListener("submit", function (event) {
   localStorage.setItem("projects", JSON.stringify(projects));
   showProjects();
   form.reset();
+  document.getElementById("cancelEdit").hidden = true;
   form.querySelector('button[type="submit"]').textContent = "Add project";
 });
 function showProjects() {
@@ -92,6 +93,7 @@ function showProjects() {
     if (project.description) {
       let notes = document.createElement("p");
       notes.textContent = project.description;
+      notes.className = "notes";
       card.appendChild(notes);
     }
 
@@ -115,6 +117,13 @@ function showProjects() {
 
     deleteButton.addEventListener("click", function () {
       if (confirm("Delete " + project.name + "?")) {
+        if (editingProject === project) {
+          editingProject = null;
+          form.reset();
+          form.querySelector('button[type="submit"]').textContent =
+            "Add project";
+          document.getElementById("cancelEdit").hidden = true;
+        }
         projects = projects.filter(function (item) {
           return item !== project;
         });
@@ -139,6 +148,8 @@ function showProjects() {
       document.getElementById("projectRepo").value = project.repo || "";
       form.querySelector('button[type="submit"]').textContent = "Save changes";
       document.getElementById("projectName").focus();
+
+      document.getElementById("cancelEdit").hidden = false;
     });
     card.appendChild(editButton);
 
@@ -178,3 +189,11 @@ document
 document
   .getElementById("programFilter")
   .addEventListener("change", showProjects);
+
+document.getElementById("cancelEdit").addEventListener("click", function () {
+  editingProject = null;
+  form.reset();
+
+  form.querySelector('button[type="submit"]').textContent = "Add project";
+  document.getElementById("cancelEdit").hidden = true;
+});

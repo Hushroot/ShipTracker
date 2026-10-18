@@ -110,3 +110,9 @@ filters select {
   flex: 1;
   min-width: 140px;
 }
+.project .notes {
+  white-space: pre-wrap;
+}
+.project {
+  overflow-wrap: anywhere;
+}
