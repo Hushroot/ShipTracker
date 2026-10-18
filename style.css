@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 30px 16px;
+  background: #f4f4f4;
+  color: #262626;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+h1 {
+  margin-bottom: 6px;
+}
+header p {
+  margin-top: 0;
+  color: #666;
+}
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+h2 {
+  font-size: 21px;
+}
+section {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 5px;
+}
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font: inherit;
+}
+button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 10px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font: inherit;
+  cursor: pointer;
+}
+button:hover {
+  background: #218838;
+}
+.project button {
+  width: auto;
+  margin-top: 12px;
+  margin-right: 8px;
+  padding: 6px 12px;
+  background: #f4f4f4;
+  color: #333;
+  border: 1px solid #ccc;
+}
+.project button:hover {
+  background: #e8e8e8;
+}
+.project.shipped h3 {
+  color: #218838;
+}
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font: inherit;
+  resize: vertical;
+}
+.project a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #218838;
+  font-size: 14px;
+  text-underline-offset: 3px;
+}
+.project a:hover {
+  color: #155724;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.filters input {
+  flex: 2;
+  min-width: 180px;
+}
+filters select {
+  flex: 1;
+  min-width: 140px;
+}

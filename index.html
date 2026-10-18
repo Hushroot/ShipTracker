@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShipTracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>ShipTracker 🚢</h1>
+      <p>Keep track of your Hack Club projects.</p>
+    </header>
+    <main>
+      <p>
+        Projects: <strong id="totalProjects">0</strong> · In Progress:
+        <strong id="activeProjects">0</strong> · Shipped:
+        <strong id="shippedProjects">0</strong>
+      </p>
+      <h2>Add a project</h2>
+
+      <form id="projectForm">
+        <label for="projectName">Project name</label>
+        <input
+          type="text"
+          id="projectName"
+          placeholder="e.g. my first game"
+          required
+        />
+
+        <label for="projectProgram">Hack Club program</label>
+        <select id="projectProgram">
+          <option>Terra</option>
+          <option>Bento</option>
+          <option>PIXL</option>
+          <option>Other</option>
+        </select>
+
+        <label for="projectStatus">Status</label>
+        <select id="projectStatus">
+          <option>Planning</option>
+          <option>In Progress</option>
+          <option>Shipped</option>
+        </select>
+
+        <label for="projectNotes">Notes</label>
+        <textarea
+          id="projectNotes"
+          rows="3"
+          placeholder="What does it do? What's left to finish?"
+        ></textarea>
+
+        <label for="projectDeadline">Deadline (optional)</label>
+        <input type="date" id="projectDeadline" />
+
+        <label for="projectRepo">Project link (optional)</label>
+        <input
+          type="url"
+          id="projectRepo"
+          placeholder="https://github.com/you/project"
+        />
+
+        <button type="submit">Add project</button>
+      </form>
+      <section>
+        <h2>My Projects</h2>
+
+        <div class="filters">
+          <input
+            type="search"
+            id="search"
+            placeholder="Search projects"
+            aria-label="Search projects"
+          />
+
+          <select id="statusFilter" aria-label="Filter by status">
+            <option value="">All statuses</option>
+            <option>Planning</option>
+            <option>In Progress</option>
+            <option>Shipped</option>
+          </select>
+
+          <select id="programFilter" aria-label="Filter by program">
+            <option value="">All programs</option>
+            <option>Terra</option>
+            <option>Bento</option>
+            <option>PIXL</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div id="projectList"></div>
+        <p id="emptyState">No projects yet. Add your first one!</p>
+      </section>
+    </main>
+  </body>
+</html>

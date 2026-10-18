@@ -1,0 +1,5 @@
+.original/
+docs/
+.DS_Store
+.env
+.env.*
